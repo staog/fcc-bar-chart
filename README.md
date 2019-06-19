@@ -34,4 +34,5 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 
 * User Story #13: My tooltip should have a data-date property that corresponds to the data-date of the active area.
 Here is the dataset you will need to complete this project: https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json
+
 You can use this CDN link to run the tests in any environment you like: https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
