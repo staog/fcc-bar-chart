@@ -14,9 +14,34 @@ body {
 }
 
 #container {
-  background-color: white;
-  height: 80%;
-  width: 70vw;
+  background-color: #ff9;
+  height: 600px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   border-radius: 5px;
+}
+
+#tooltip {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  height: 48px;
+  font-size: 11px;
+  background-color: blue;
+  color: white;
+}
+
+#x-axis {
+  stroke: black;
+  stroke-width: 1
+}
+
+#y-axis {
+  stroke: black;
+  stroke-width: 1
 }
