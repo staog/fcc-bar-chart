@@ -41,7 +41,5 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
       return item[0].substring(0, 4) + ' ' + quarter
     }
 
-  });    .attr('transform', 'translate(60, 0)');
-
 });
 
