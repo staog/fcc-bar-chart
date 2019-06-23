@@ -41,55 +41,7 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
       return item[0].substring(0, 4) + ' ' + quarter
     }
 
-  });
-
-  const date = data.data.map(function(item) {
-    return new Date(item[0]);
-  });
-
-  const maxX = new Date(d3.max(date));
-    maxX.setMonth(maxX.getMonth() + 3);
-
-  const xScale = d3.scaleTime()
-                   .domain([d3.min(date), maxX])
-                   .range([0, width]);
-
-  const xAxis = d3.axisBottom()
-                  .scale(xScale);
-
-  const xAxisGroup = chart.append('g')
-                          .call(xAxis)
-                          .attr('id', 'x-axis')
-                          .attr('transform', 'translate(60, 400)');
-
-  const grossDomesticProduct = data.data.map(function(item) {
-    return item[1];
-  })
-
-  const scaledGDP = [];
-
-  const gdpMin = d3.min(grossDomesticProduct),
-        gdpMax = d3.max(grossDomesticProduct);
-
-
-  const linearScale = d3.scaleLinear()
-                        .domain([0, gdpMax])
-                        .range([0], height);
-
-  scaledGDP = grossDomesticProduct.map(function(item) {
-    return linearScale(item);
-  });
-
-  const yAxisScale = d3.scaleLinear()
-                       .domain([0, gdpMax])
-                       .range([height, 0]);
-
-  const yAxis = d3.axisLeft(yAxisScale);
-
-  const yAxisGroup = chart.append('g')
-                          .call(yAxis)
-                          .attr('id', 'y-axis')
-                          .attr('transform', 'translate(60, 0)');
+  });    .attr('transform', 'translate(60, 0)');
 
 });
 
