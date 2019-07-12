@@ -1,45 +1,44 @@
-const height = 400,
-      width = 800,
-      barWidth = width/275;
-
-const chart = d3.select('#chart')
-                .append('svg')
-                .attr('width', width)
-                .attr('height', height)
-
-const tooltip = d3.select('#chart')
+function chart(gdpData) {
+  let height = 400;
+  let width = 800;
+  
+  let minDate = gdpData[0][0].substr(0, 4);
+      minDate = new Date(minDate);
+  let maxDate = gdpData[gdpData.length - 1][0].substr(0, 4);
+      maxDate = new Date(maxDate);
+  
+  let xAxisScale = d3.time.scale()
+                     .domain([minDate, maxDate])
+                     .range([0, width]);
+  
+  let yAxisScale = d3.time.linear()
+                     .domain([0, d3.max(gdpData, function(d) {
+                       return d[1];
+                     })])
+                     .range([height, 0]);
+  
+  let xAxis = d3.svg.axis()
+                    .scale(xAxisScale)
+                    .orient("bottom");
+  
+  let yAxis = d3.svg.axis()
+                    .scale(yAxisScale)
+                    .orient("left");
+  
+  let tooltip = d3.select('body')
                   .append('div')
-                  .attr('id', 'tooltip')
+                  .style({'position': 'absolute',
+                          'padding': '5px',
+                          'background': 'black',
+                          'color': 'yellow',
+                          'border': '1px solid gray'})
+  
+  let svg = d3.select('#container')
+              .append('svg')
+  
+  }
 
-d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json', function(err, data) {
-
-
-  chart.append('text')
-       .attr('transform', 'rotate(-90)')
-       .attr('x', -300)
-       .attr('y', 80)
-       .text('Gross Domestic Product in billions');
-
-  const years = data.data.map(function(item) {
-    let quarter;
-    let temp = item[0].substring(5, 7);
-
-    switch (true) {
-      case temp === '01':
-        quarter = 'Q1';
-        break;
-      case temp === '02':
-        quarter = 'Q2';
-        break;
-      case temp === '03':
-        quarter = 'Q3';
-        break;
-      case temp === '04':
-        quarter = 'Q4';
-        break;
-
-      return item[0].substring(0, 4) + ' ' + quarter
-    }
-
+d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json", function(data){
+  let gdpData = data.data;
+  chart(gdpData);
 });
-
