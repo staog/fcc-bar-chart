@@ -14,9 +14,9 @@ body {
 }
 
 #container {
-  background-color: orange;
-  height: 600px;
+  background-color: white;
   width: 900px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   text-align: center;
