@@ -81,8 +81,8 @@ function chart(dataset){
               .style("opacity", .9)
        tooltip.html("Date " + info(years[i]) + "<br>$" + GDP[i] + " Billions")
               .attr("data-date", dataset[i][0])
-              .style("left", (i * singleBar) + 30 + "px")
-              .style("top", h - 10 + "px")
+              .style("left", i + 30 + "px")
+              .style("top", h - 100 + "px")
               .style("transform", "translate(60px)")
      })
      .on("mouseout", d => {
