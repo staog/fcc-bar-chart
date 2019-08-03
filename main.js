@@ -17,8 +17,6 @@ function chart(dataset){
   const scaledGDP = GDP.map(d => linearScale(d));
   const years = dataset.map(d => new Date(d[0]));
   
-  console.log(years)
-  
   const xScale = d3.scaleTime()
                    .domain([d3.min(years), d3.max(years)])
                    .range([margin, w - margin]);
@@ -82,7 +80,7 @@ function chart(dataset){
        tooltip.html("Date " + info(years[i]) + "<br>$" + GDP[i] + " Billions")
               .attr("data-date", dataset[i][0])
               .style("left", i + 30 + "px")
-              .style("top", h - 100 + "px")
+              .style("top", h - 80 + "px")
               .style("transform", "translate(60px)")
      })
      .on("mouseout", d => {
