@@ -57,7 +57,7 @@ function chart(dataset){
 
   svg.append("g")
      .attr("id", "y-axis")
-     .attr("transform", "translate(" + 5 + "0)") 
+     .attr("transform", "translate(" + margin + ", 0)") 
      .call(yAxis);  
   
   svg.selectAll("rect")
@@ -80,7 +80,7 @@ function chart(dataset){
        tooltip.html("Date " + info(years[i]) + "<br>$" + GDP[i] + " Billions")
               .attr("data-date", dataset[i][0])
               .style("left", i + 30 + "px")
-              .style("top", h - 80 + "px")
+              .style("top", h - 100 + "px")
               .style("transform", "translate(60px)")
      })
      .on("mouseout", d => {
