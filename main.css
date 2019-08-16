@@ -21,6 +21,7 @@ body {
   flex-direction: column;
   text-align: center;
   border-radius: 5px;
+  box-shadow: 2px 2px 7px #222, -2px -2px 7px #222;
 }
 
 #tooltip {
@@ -32,7 +33,7 @@ body {
   width: 120px;
   height: 48px;
   font-size: 12px;
-  background-color: lightgrey;
+  background-color: lightblue;
   box-shadow: 1px 1px 5px;
   border-radius: 3px;
   margin-left: 30rem;
@@ -40,6 +41,10 @@ body {
 
 .text {
   font-size: 0.9rem;
+}
+
+.signature {
+  font-size: 0.8rem;
 }
 
 #x-axis {
@@ -55,4 +60,3 @@ body {
 .bar:hover {
   fill: brown;
 }
-
