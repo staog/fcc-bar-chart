@@ -17,6 +17,8 @@ function chart(dataset){
   const scaledGDP = GDP.map(d => linearScale(d));
   const years = dataset.map(d => new Date(d[0]));
   
+  console.log(years)
+  
   const xScale = d3.scaleTime()
                    .domain([d3.min(years), d3.max(years)])
                    .range([margin, w - margin]);
@@ -31,18 +33,26 @@ function chart(dataset){
                 .attr("width", w)
                 .attr("height", h);
   
-  svg.append('text')
+  svg.append("text")
       .attr("class", "text")
-      .attr('transform', 'rotate(-90)')
-      .attr('x', -230)
-      .attr('y', 80)
-      .text('Gross Domestic Product');
+      .attr("transform", "rotate(-90)")
+      .attr("x", -230)
+      .attr("y", 80)
+      .text("Gross Domestic Product");
   
-  svg.append('text')
+  svg.append("text")
      .attr("class", "text")
-     .attr('x', w/2.7 + 120)
-     .attr('y', h - 10)
-     .text('Growth of GDP through the years after WWII')
+     .attr("x", w/2.7 + 120)
+     .attr("y", h - 10)
+     .text("Growth of GDP through the years after WWII")
+  
+  svg.append("text")
+     .attr("class", "signature")
+     .attr("transform", "rotate(90)")
+     .attr("x", 50)
+     .attr("y", -760)
+     .style("fill", "blue")
+     .text("Made by Milan V. Kecojević");
   
   const xAxis = d3.axisBottom()
                    .scale(xScale);
@@ -65,8 +75,8 @@ function chart(dataset){
      .enter()
      .append("rect")
      .attr("class", "bar")
-     .attr('data-date', (d, i) => dataset[i][0])
-     .attr('data-gdp', (d, i) => dataset[i][1])
+     .attr("data-date", (d, i) => dataset[i][0])
+     .attr("data-gdp", (d, i) => dataset[i][1])
      .attr("fill", "orange")
      .attr("x", (d, i) => xScale(years[i]))
      .attr("y", (d, i) => h - d)
