@@ -44,14 +44,13 @@ function chart(dataset){
      .attr("class", "text")
      .attr("x", w/2.7 + 120)
      .attr("y", h - 10)
-     .text("Growth of GDP through the years after WWII")
+     .text("Growth of GDP in America")
   
   svg.append("text")
      .attr("class", "signature")
      .attr("transform", "rotate(90)")
-     .attr("x", 50)
+     .attr("x", margin)
      .attr("y", -760)
-     .style("fill", "blue")
      .text("Made by Milan V. Kecojević");
   
   const xAxis = d3.axisBottom()
