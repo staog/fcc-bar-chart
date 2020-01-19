@@ -41,6 +41,6 @@ You can use this CDN link to run the tests in any environment you like: https://
 
 =======================================================================
 
-[DEMO](https://codepen.io/staog/full/pXRZPZ)
+[DEMO](https://codepen.io/staog/full/dybwOog)
 
 =======================================================================
